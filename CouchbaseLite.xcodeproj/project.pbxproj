@@ -4149,14 +4149,12 @@
 				GCC_PREFIX_HEADER = Source/CouchbaseLitePrefix.h;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GENERATE_MASTER_OBJECT_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$SRCROOT/vendor/yajl/build/yajl-2.0.5/include",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRELINK_FLAGS = "-objc_abi_version 2";
 				PRODUCT_NAME = CouchbaseLite;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -4169,6 +4167,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DSTROOT = /tmp/CouchbaseLiteiOS.dst;
 				EXPORTED_SYMBOLS_FILE = Source/CouchbaseLite.exp;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4176,14 +4175,12 @@
 				GCC_PREFIX_HEADER = Source/CouchbaseLitePrefix.h;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GENERATE_MASTER_OBJECT_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$SRCROOT/vendor/yajl/build/yajl-2.0.5/include",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRELINK_FLAGS = "-objc_abi_version 2";
 				PRODUCT_NAME = CouchbaseLite;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -4488,9 +4485,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = YES;
 				GCC_WARN_SIGN_COMPARE = NO;
-				GENERATE_MASTER_OBJECT_FILE = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRELINK_FLAGS = "-objc_abi_version 2";
 				PRODUCT_NAME = CouchbaseLiteListener;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -4505,6 +4500,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DSTROOT = /tmp/CouchbaseLiteiOS.dst;
 				EXPORTED_SYMBOLS_FILE = Listener/CouchbaseLiteListener.exp;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -4514,9 +4510,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = YES;
 				GCC_WARN_SIGN_COMPARE = NO;
-				GENERATE_MASTER_OBJECT_FILE = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRELINK_FLAGS = "-objc_abi_version 2";
 				PRODUCT_NAME = CouchbaseLiteListener;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
