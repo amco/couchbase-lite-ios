@@ -145,10 +145,6 @@ typedef void (^CBLChangeMatcherClient)(id sequence, NSString* docID, NSArray* re
             }
         }
     }
-    else if (_docIDs)
-    {
-        [path appendString:@"&filter=_doc_ids"];
-    }
 
     return path;
 }
