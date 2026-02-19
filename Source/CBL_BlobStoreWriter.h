@@ -28,6 +28,9 @@
 /** Appends data to the blob. Call this when new data is available. */
 - (void) appendData: (NSData*)data;
 
+/** If a write error occurred (e.g. disk full), this will be non-nil. */
+@property (readonly, strong) NSError* writeError;
+
 - (BOOL) appendInputStream: (NSInputStream*)readStream
                      error: (NSError**)outError;
 

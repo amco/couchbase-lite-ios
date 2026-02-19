@@ -151,6 +151,10 @@ BOOL CBLAttachmentDownloaderFakeTransientFailures;
 #endif
     [super didReceiveData: data];
     [_writer appendData: data];
+    if (_writer.writeError) {
+        [self didFailWithError: _writer.writeError];
+        return;
+    }
 
 }
 
