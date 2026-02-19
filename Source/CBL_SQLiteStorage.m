@@ -232,6 +232,7 @@ DefineLogDomain(SQL);
 
     // Register CouchDB-compatible JSON collation functions:
     sqlite3* dbHandle = _fmdb.sqliteHandle;
+    sqlite3_busy_timeout(dbHandle, 5000);
     sqlite3_create_collation(dbHandle, "JSON", SQLITE_UTF8,
                              kCBLCollateJSON_Unicode, CBLCollateJSON);
     sqlite3_create_collation(dbHandle, "JSON_RAW", SQLITE_UTF8,
@@ -2209,7 +2210,7 @@ NSString* CBLJoinSQLQuotedStrings(NSArray* strings) {
     Log(@"    ... deleted %d revisions", _fmdb.changes);
 
     Log(@"Flushing SQLite WAL...");
-    if (![_fmdb executeUpdate: @"PRAGMA wal_checkpoint(RESTART)"])
+    if (![_fmdb executeUpdate: @"PRAGMA wal_checkpoint(PASSIVE)"])
         return CBLStatusToOutNSError(self.lastDbError, outError);
 
     Log(@"Vacuuming SQLite database...");
