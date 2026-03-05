@@ -190,9 +190,15 @@ DefineLogDomain(Server);
 #endif
 
         // Now run:
-        while (!_stopRunLoop && [[NSRunLoop currentRunLoop] runMode: NSDefaultRunLoopMode
-                                                         beforeDate: [NSDate distantFuture]])
-            ;
+        while (!_stopRunLoop) {
+            @try {
+                if (![[NSRunLoop currentRunLoop] runMode: NSDefaultRunLoopMode
+                                              beforeDate: [NSDate distantFuture]])
+                    break;
+            } @catch (NSException *e) {
+                Warn(@"CBL_RunLoopServer: Caught exception on server thread: %@", e);
+            }
+        }
         
         LogTo(Server, @"%@: Server thread exiting", self);
 

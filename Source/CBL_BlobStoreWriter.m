@@ -36,9 +36,10 @@ typedef struct {
     CBLMD5Key _MD5Digest;
     CBLCryptorBlock _encryptor;
     CBLProgressGroup* _progress;
+    NSError* _writeError;
 }
 @synthesize name=_name, bytesWritten=_bytesWritten, contentLength=_contentLength;
-@synthesize blobKey=_blobKey, eTag=_eTag;
+@synthesize blobKey=_blobKey, eTag=_eTag, writeError=_writeError;
 
 
 - (instancetype) initWithStore: (CBL_BlobStore*)store {
@@ -75,7 +76,7 @@ typedef struct {
 }
 
 - (void) appendData: (NSData*)data {
-    Assert(_out, @"Not open");
+    if (_writeError || !_out) return;
     NSUInteger dataLen = data.length;
     _bytesWritten += dataLen;
     _progress.completedUnitCount = _bytesWritten;
@@ -84,7 +85,15 @@ typedef struct {
 
     if (_encryptor)
         data = _encryptor(data);
-    [_out writeData: data];
+    @try {
+        [_out writeData: data];
+    } @catch (NSException *e) {
+        Warn(@"CBL_BlobStoreWriter: Exception writing data: %@", e);
+        _writeError = [NSError errorWithDomain: NSPOSIXErrorDomain
+                                          code: ENOSPC
+                                      userInfo: @{NSLocalizedDescriptionKey: e.reason ?: @"Write failed"}];
+        [self closeFile];
+    }
 }
 
 
@@ -166,9 +175,16 @@ typedef struct {
 
 
 - (void) finish {
-    Assert(_out, @"Already finished");
+    if (_writeError || !_out) return;
     if (_encryptor) {
-        [_out writeData: _encryptor(nil)];  // write remaining encrypted data & clean up
+        @try {
+            [_out writeData: _encryptor(nil)];  // write remaining encrypted data & clean up
+        } @catch (NSException *e) {
+            Warn(@"CBL_BlobStoreWriter: Exception writing final data: %@", e);
+            _writeError = [NSError errorWithDomain: NSPOSIXErrorDomain
+                                              code: ENOSPC
+                                          userInfo: @{NSLocalizedDescriptionKey: e.reason ?: @"Write failed"}];
+        }
         _encryptor = nil;
     }
     [self closeFile];
