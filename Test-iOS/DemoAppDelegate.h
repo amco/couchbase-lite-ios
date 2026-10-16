@@ -14,9 +14,6 @@
 
 @property (nonatomic, strong) CBLDatabase *database;
 
-@property (strong, nonatomic) IBOutlet UIWindow *window;
-@property (nonatomic, strong) IBOutlet UINavigationController *navigationController;
-
 - (void)showAlert: (NSString*)message error: (NSError*)error fatal: (BOOL)fatal;
 
 @end

@@ -643,7 +643,6 @@
 		27731F3714967A5F00815D67 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27731F3414967A5F00815D67 /* RootViewController.m */; };
 		27731F3814967A5F00815D67 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27731F3614967A5F00815D67 /* ConfigViewController.m */; };
 		27731F3C14967A8400815D67 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27731F3914967A8400815D67 /* RootViewController.xib */; };
-		27731F3D14967A8400815D67 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27731F3A14967A8400815D67 /* MainWindow.xib */; };
 		27731F3E14967A8400815D67 /* ConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27731F3B14967A8400815D67 /* ConfigViewController.xib */; };
 		2776A59116A0C3A6006FF199 /* CBLPersonaAuthorizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2776A58F16A0C3A6006FF199 /* CBLPersonaAuthorizer.h */; };
 		2776A59216A0C3A6006FF199 /* CBLPersonaAuthorizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2776A58F16A0C3A6006FF199 /* CBLPersonaAuthorizer.h */; };
@@ -966,6 +965,7 @@
 		27FAEF0F164C8ADB00A3C0C2 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FAEF0C164C8ADB00A3C0C2 /* icon.png */; };
 		27FAEF10164C8ADB00A3C0C2 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FAEF0D164C8ADB00A3C0C2 /* icon@2x.png */; };
 		27FAEF11164C8ADB00A3C0C2 /* icon~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FAEF0E164C8ADB00A3C0C2 /* icon~ipad.png */; };
+		7904E690147F7D89B455871D /* DemoSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1B4BC3A550D921CB62D228 /* DemoSceneDelegate.m */; };
 		930FE5721C5856E1008107A0 /* CBLRegisterJSViewCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 93EBA2651B2EC61E0006C66C /* CBLRegisterJSViewCompiler.m */; };
 		930FE5731C58571E008107A0 /* CBLJSFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 792867CC178DE03E00248AF0 /* CBLJSFunction.m */; };
 		930FE5741C58573F008107A0 /* CBLJSViewCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 792867CF178DE03E00248AF0 /* CBLJSViewCompiler.m */; };
@@ -1773,7 +1773,6 @@
 		27731F3514967A5F00815D67 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		27731F3614967A5F00815D67 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
 		27731F3914967A8400815D67 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
-		27731F3A14967A8400815D67 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		27731F3B14967A8400815D67 /* ConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigViewController.xib; sourceTree = "<group>"; };
 		2776A58F16A0C3A6006FF199 /* CBLPersonaAuthorizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLPersonaAuthorizer.h; sourceTree = "<group>"; };
 		2776A59016A0C3A6006FF199 /* CBLPersonaAuthorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLPersonaAuthorizer.m; sourceTree = "<group>"; };
@@ -2150,6 +2149,8 @@
 		27FFFF501C973FB5001A70FC /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		27FFFF511C973FB5001A70FC /* Project_Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project_Debug.xcconfig; sourceTree = "<group>"; };
 		27FFFF521C973FB5001A70FC /* Project_Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project_Release.xcconfig; sourceTree = "<group>"; };
+		645A6DC2EABAD680BE6AEDB3 /* DemoSceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoSceneDelegate.h; sourceTree = "<group>"; };
+		6A1B4BC3A550D921CB62D228 /* DemoSceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoSceneDelegate.m; sourceTree = "<group>"; };
 		792867CB178DE03E00248AF0 /* CBLJSFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLJSFunction.h; sourceTree = "<group>"; };
 		792867CC178DE03E00248AF0 /* CBLJSFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLJSFunction.m; sourceTree = "<group>"; };
 		792867CE178DE03E00248AF0 /* CBLJSViewCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLJSViewCompiler.h; sourceTree = "<group>"; };
@@ -3147,11 +3148,12 @@
 			children = (
 				27B0B81A1492C16300A817AD /* DemoAppDelegate.h */,
 				27B0B81B1492C16300A817AD /* DemoAppDelegate.m */,
+				645A6DC2EABAD680BE6AEDB3 /* DemoSceneDelegate.h */,
+				6A1B4BC3A550D921CB62D228 /* DemoSceneDelegate.m */,
 				27731F3314967A5F00815D67 /* RootViewController.h */,
 				27731F3414967A5F00815D67 /* RootViewController.m */,
 				27731F3514967A5F00815D67 /* ConfigViewController.h */,
 				27731F3614967A5F00815D67 /* ConfigViewController.m */,
-				27731F3A14967A8400815D67 /* MainWindow.xib */,
 				27731F3914967A8400815D67 /* RootViewController.xib */,
 				27731F3B14967A8400815D67 /* ConfigViewController.xib */,
 				274C3917149E6B0900A5E89B /* EmptyAppDelegate.h */,
@@ -4734,7 +4736,6 @@
 			files = (
 				27B0B8161492C16300A817AD /* InfoPlist.strings in Resources */,
 				27731F3C14967A8400815D67 /* RootViewController.xib in Resources */,
-				27731F3D14967A8400815D67 /* MainWindow.xib in Resources */,
 				27731F3E14967A8400815D67 /* ConfigViewController.xib in Resources */,
 				27D895CB14E4EF9E00AC701E /* Entitlements.plist in Resources */,
 				27FAEEF2164C8A4D00A3C0C2 /* background.jpg in Resources */,
@@ -5458,6 +5459,7 @@
 				27CCBBEE1D0240DF00BFA5F5 /* OpenIDController.m in Sources */,
 				27B0B8181492C16300A817AD /* main.m in Sources */,
 				27B0B81C1492C16300A817AD /* DemoAppDelegate.m in Sources */,
+				7904E690147F7D89B455871D /* DemoSceneDelegate.m in Sources */,
 				27731F3714967A5F00815D67 /* RootViewController.m in Sources */,
 				27731F3814967A5F00815D67 /* ConfigViewController.m in Sources */,
 				27CB056316CDD1ED0040C9F8 /* CBLUICollectionSource.m in Sources */,
