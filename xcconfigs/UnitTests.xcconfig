@@ -12,3 +12,4 @@ FRAMEWORK_SEARCH_PATHS      = $(DEVELOPER_FRAMEWORKS_DIR) $(inherited)
 HEADER_SEARCH_PATHS         = $(inherited) vendor/CBForest/CBForest/ vendor/CBForest/vendor/forestdb/include/libforestdb/ vendor/BLIP/BLIP/ vendor/CBForest/CBForest/Encryption/
 LD_RUNPATH_SEARCH_PATHS     = $(inherited) @executable_path/Frameworks @loader_path/Frameworks
 SWIFT_OBJC_BRIDGING_HEADER  = Unit-Tests/UnitTests-Bridging-Header.h
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COMMON_DIGEST_FOR_OPENSSL=

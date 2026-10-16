@@ -1429,6 +1429,13 @@
 			remoteGlobalIDString = 27EF807419142C2500A327B9;
 			remoteInfo = Tokenizer;
 		};
+		3C33799D3F283F32E7AFAD20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 930FE55D1C58562B008107A0;
+			remoteInfo = CBLJSViewCompiler;
+		};
 		DA147C3814BCAC670052DA4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
@@ -4016,6 +4023,7 @@
 			dependencies = (
 				270035921A44E9270015B9F4 /* PBXTargetDependency */,
 				27AF0A5F1A4A3457003F51D0 /* PBXTargetDependency */,
+				A71613793AB887F7F4689692 /* PBXTargetDependency */,
 			);
 			name = "CBL iOS Unit Tests";
 			productName = "CBL iOS Unit Tests";
@@ -5763,6 +5771,11 @@
 			target = 27E66A571A7305B10091DA3F /* CBL SQLite Storage */;
 			targetProxy = 27F1B0051A84160E0056DA1E /* PBXContainerItemProxy */;
 		};
+		A71613793AB887F7F4689692 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 930FE55D1C58562B008107A0 /* CBLJSViewCompiler */;
+			targetProxy = 3C33799D3F283F32E7AFAD20 /* PBXContainerItemProxy */;
+		};
 		DA147C3914BCAC670052DA4D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DA023B2614BCA94C008184BB /* Listener iOS Library */;
@@ -5910,7 +5923,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27FFFF301C973FB5001A70FC /* Mac Unit Tests_Debug.xcconfig */;
 			buildSettings = {
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -5918,7 +5931,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27FFFF311C973FB5001A70FC /* Mac Unit Tests_Release.xcconfig */;
 			buildSettings = {
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
