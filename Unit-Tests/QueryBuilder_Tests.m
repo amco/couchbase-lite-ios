@@ -39,6 +39,11 @@ static NSString* desc(id obj) {
 }
 
 
+static NSString* ascendingSortDesc(NSString* key) {
+    return desc(@[[NSSortDescriptor sortDescriptorWithKey: key ascending: YES]]);
+}
+
+
 // Checks whether desc(value) matches expectedDesc.
 static BOOL matchDesc(NSString* what, id value, NSString* expectedDesc) {
     if([desc(value) isEqualToString: expectedDesc] || (!value && !expectedDesc))
@@ -136,7 +141,7 @@ static void test(QueryBuilder_Tests *self,
          @"{$TAG, lowercase:($PREFIX)}",
          @"{$TAG, lowercase:($PREFIX)}",
          nil,
-         @"[(value3, ascending, compare:)]",
+         ascendingSortDesc(@"value3"),
          nil);
 
     test(self, /*select*/ @[@"title", @"body", @"author", @"date"],
@@ -196,7 +201,7 @@ static void test(QueryBuilder_Tests *self,
          @"{$A, $MIN}",
          @"{$A, $MAX}",
          nil,
-         @"[(value1, ascending, compare:)]",
+         ascendingSortDesc(@"value1"),
          @"value1 CONTAINS $NAME");
 
     test(self, /*select*/ @[@"Album"],
@@ -208,7 +213,7 @@ static void test(QueryBuilder_Tests *self,
          @"{$A, $MIN}",
          @"{$A, $MAX}",
          nil,
-         @"[(value1, ascending, compare:)]",
+         ascendingSortDesc(@"value1"),
          @"value1 CONTAINS $NAME");
 
     test(self, /*select*/ @[@"count"],
@@ -233,7 +238,7 @@ static void test(QueryBuilder_Tests *self,
          nil,
          nil,
          @"$uids",
-         @"[(value0, ascending, compare:)]",
+         ascendingSortDesc(@"value0"),
          nil);
 }
 
