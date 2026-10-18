@@ -1526,6 +1526,7 @@
 		2700358E1A44E9270015B9F4 /* Info-UnitTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-UnitTests.plist"; sourceTree = "<group>"; };
 		2700358F1A44E9270015B9F4 /* Database_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Database_Tests.m; sourceTree = "<group>"; };
 		270035961A44FE2F0015B9F4 /* CBLTestCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBLTestCase.h; sourceTree = "<group>"; };
+		754ED44AF7DB4A4DB984A7B5 /* CBL iOS Unit Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "CBL iOS Unit Tests.xctestplan"; sourceTree = "<group>"; };
 		270035971A44FE890015B9F4 /* CBLTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLTestCase.m; sourceTree = "<group>"; };
 		270035991A4500160015B9F4 /* View_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View_Tests.m; sourceTree = "<group>"; };
 		2700BC5B14B64AA600B5B297 /* CBL_Router+Handlers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBL_Router+Handlers.m"; sourceTree = "<group>"; };
@@ -2527,6 +2528,7 @@
 				2786CE611B83A4830061998D /* CBLKVOProxy.m */,
 				27B085D11B34BDD200D3D9D8 /* SwiftModel_Test.swift */,
 				2700358E1A44E9270015B9F4 /* Info-UnitTests.plist */,
+				754ED44AF7DB4A4DB984A7B5 /* CBL iOS Unit Tests.xctestplan */,
 				27067A961AAF61380093AF4B /* CBForest tests */,
 				27C706CA1488679500F0F099 /* Test-Mac */,
 				27B0B8111492C16300A817AD /* Test-iOS */,
