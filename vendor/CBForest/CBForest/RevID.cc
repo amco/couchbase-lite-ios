@@ -171,6 +171,14 @@ namespace cbforest {
     }
 
 
+    revidBuffer& revidBuffer::operator=(const revidBuffer& other) {
+        memcpy(_buffer, other._buffer, sizeof(_buffer));
+        buf = &_buffer;
+        size = other.size;
+        return *this;
+    }
+
+
     revidBuffer::revidBuffer(unsigned generation, slice digest)
     :revid(&_buffer, 0)
     {
