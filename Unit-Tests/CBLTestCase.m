@@ -165,6 +165,8 @@ extern int c4_getObjectCount(void);             // from c4Base.h (CBForest)
     // Run each test method twice, once with SQLite storage and once with ForestDB.
     _useForestDB = NO;
     [super invokeTest];
+    if (self.testRun.hasBeenSkipped)
+        return;
     _useForestDB = YES;
     [super invokeTest];
 }
@@ -322,8 +324,7 @@ extern int c4_getObjectCount(void);             // from c4Base.h (CBForest)
     if (!urlStr)
         urlStr = kDefaultRemoteTestServer;
     else if (urlStr.length == 0) {
-        Assert(NO, @"Skipping test: no remote DB URL configured");
-        return nil;
+        XCTSkip(@"No remote DB URL configured");
     }
     NSURL* server = [NSURL URLWithString: urlStr];
 
@@ -349,8 +350,7 @@ extern int c4_getObjectCount(void);             // from c4Base.h (CBForest)
     if (!urlStr)
         urlStr = kDefaultRemoteSSLTestServer;
     else if (urlStr.length == 0) {
-        Assert(NO, @"Skipping test: no remote DB SSL URL configured");
-        return nil;
+        XCTSkip(@"No remote DB SSL URL configured");
     }
     NSURL* server = [NSURL URLWithString: urlStr];
     return dbName ? [server URLByAppendingPathComponent: dbName] : server;
