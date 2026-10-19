@@ -7,9 +7,12 @@
 [submodule "vendor/WebSockets-Cocoa"]
 	path = vendor/WebSockets-Cocoa
 	url = https://github.com/couchbaselabs/WebSockets-Cocoa.git
-[submodule "vendor/CBForest"]
-	path = vendor/CBForest
-	url = https://github.com/couchbaselabs/cbforest.git
 [submodule "vendor/fmdb"]
 	path = vendor/fmdb
 	url = https://github.com/couchbaselabs/fmdb.git
+[submodule "vendor/CBForest/vendor/forestdb"]
+	path = vendor/CBForest/vendor/forestdb
+	url = https://github.com/couchbaselabs/forestdb.git
+[submodule "vendor/CBForest/vendor/sqlite3-unicodesn"]
+	path = vendor/CBForest/vendor/sqlite3-unicodesn
+	url = https://github.com/snej/sqlite3-unicodesn.git
