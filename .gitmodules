@@ -1,24 +1,21 @@
-[submodule "vendor/CocoaHTTPServer"]
-	path = vendor/CocoaHTTPServer
-	url = https://github.com/couchbaselabs/CocoaHTTPServer.git
 [submodule "vendor/MYUtilities"]
 	path = vendor/MYUtilities
 	url = https://github.com/snej/MYUtilities.git
-[submodule "vendor/oauthconsumer"]
-	path = vendor/oauthconsumer
-	url = https://github.com/couchbaselabs/ios-oauthconsumer.git
 [submodule "vendor/JSON-Schema-Test-Suite"]
 	path = vendor/JSON-Schema-Test-Suite
 	url = https://github.com/json-schema/JSON-Schema-Test-Suite.git
-[submodule "vendor/WebSockets-Cocoa"]
-	path = vendor/WebSockets-Cocoa
-	url = https://github.com/couchbaselabs/WebSockets-Cocoa.git
-[submodule "vendor/CBForest"]
-	path = vendor/CBForest
-	url = https://github.com/couchbaselabs/cbforest.git
-[submodule "vendor/fmdb"]
-	path = vendor/fmdb
-	url = https://github.com/couchbaselabs/fmdb.git
-[submodule "vendor/BLIP"]
-	path = vendor/BLIP
-	url = https://github.com/couchbaselabs/BLIP-Cocoa.git
+[submodule "vendor/CBForest/vendor/forestdb"]
+	path = vendor/CBForest/vendor/forestdb
+	url = https://github.com/couchbaselabs/forestdb.git
+[submodule "vendor/CBForest/vendor/sqlite3-unicodesn"]
+	path = vendor/CBForest/vendor/sqlite3-unicodesn
+	url = https://github.com/snej/sqlite3-unicodesn.git
+[submodule "vendor/WebSockets-Cocoa/vendor/CocoaAsyncSocket"]
+	path = vendor/WebSockets-Cocoa/vendor/CocoaAsyncSocket
+	url = https://github.com/robbiehanson/CocoaAsyncSocket.git
+[submodule "vendor/WebSockets-Cocoa/vendor/MYUtilities"]
+	path = vendor/WebSockets-Cocoa/vendor/MYUtilities
+	url = https://github.com/snej/MYUtilities.git
+[submodule "vendor/BLIP/vendor/MYUtilities"]
+	path = vendor/BLIP/vendor/MYUtilities
+	url = https://github.com/snej/MYUtilities.git

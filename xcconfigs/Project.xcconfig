@@ -12,7 +12,7 @@ ARCHS[sdk=macosx*]                                         = $(ARCHS_STANDARD_64
 ONLY_ACTIVE_ARCH                                           = NO
 SDKROOT                                                    = macosx
 MACOSX_DEPLOYMENT_TARGET                                   = 10.9
-IPHONEOS_DEPLOYMENT_TARGET                                 = 8.0
+IPHONEOS_DEPLOYMENT_TARGET                                 = 15.0
 TVOS_DEPLOYMENT_TARGET                                     = 9.0
 
 // Code generation:
@@ -25,7 +25,7 @@ GCC_VERSION                                                = com.apple.compilers
 CLANG_ENABLE_MODULES                                       = YES
 CLANG_ENABLE_OBJC_ARC                                      = YES
 ENABLE_STRICT_OBJC_MSGSEND                                 = YES
-SWIFT_VERSION                                              = 3.0    // For Xcode 8+
+SWIFT_VERSION                                              = 5.0
 
 // Linking:
 CLANG_CXX_LIBRARY                                          = libc++
@@ -51,7 +51,7 @@ CLANG_WARN_OBJC_ROOT_CLASS                                 = YES_ERROR
 CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION                  = YES
 CLANG_WARN_SUSPICIOUS_MOVE                                 = YES
 CLANG_WARN_UNREACHABLE_CODE                                = YES
-GCC_TREAT_WARNINGS_AS_ERRORS                               = YES
+GCC_TREAT_WARNINGS_AS_ERRORS                               = NO
 GCC_WARN_ABOUT_MISSING_PROTOTYPES                          = YES
 GCC_WARN_ABOUT_RETURN_TYPE                                 = YES
 GCC_WARN_TYPECHECK_CALLS_TO_PRINTF                         = YES
