@@ -16,3 +16,6 @@
 [submodule "vendor/WebSockets-Cocoa/vendor/MYUtilities"]
 	path = vendor/WebSockets-Cocoa/vendor/MYUtilities
 	url = https://github.com/snej/MYUtilities.git
+[submodule "vendor/BLIP/vendor/MYUtilities"]
+	path = vendor/BLIP/vendor/MYUtilities
+	url = https://github.com/snej/MYUtilities.git
