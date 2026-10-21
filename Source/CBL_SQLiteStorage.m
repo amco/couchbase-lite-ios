@@ -881,7 +881,7 @@ DefineLogDomain(SQL);
             NSData* json = [r dataNoCopyForColumnIndex: 1];
             rev.asJSON = json;
             if (json)
-                status = kCBLStatusOK;
+                status = rev.asJSON ? kCBLStatusOK : kCBLStatusCorruptError;
         }
         [r close];
         return status;

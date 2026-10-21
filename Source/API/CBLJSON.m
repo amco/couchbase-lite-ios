@@ -79,24 +79,37 @@ static NSTimeInterval k1970ToReferenceDate;
         Warn(@"Unable to serialize to JSON: %@", dict);
         return json;
     }
-    return [self appendJSONDictionaryData: (NSData*)extraJson toJSONDictionaryData: json];
+    NSData* combined = [self appendJSONDictionaryData: (NSData*)extraJson
+                                 toJSONDictionaryData: json];
+    return combined ?: json;
 }
 
-+ (NSData*) appendJSONDictionaryData: (UU NSData*)extraJson
-                toJSONDictionaryData: (UU NSData*)json
++ (nullable NSData*) appendJSONDictionaryData: (UU NSData*)extraJson
+                         toJSONDictionaryData: (UU NSData*)json
 {
     size_t jsonLength = json.length;
     size_t extraLength = extraJson.length;
-    CAssert(jsonLength >= 2);
-    CAssertEq(*(const char*)json.bytes, '{');
+    const uint8_t* jsonBytes = json.bytes;
+    const uint8_t* extraBytes = extraJson.bytes;
+    if (jsonLength < 2 || extraLength < 2 || !jsonBytes || !extraBytes
+            || jsonBytes[0] != '{' || extraBytes[0] != '{') {
+        Warn(@"CBLJSON: can't append %zu bytes of JSON to a %zu-byte dictionary",
+             extraLength, jsonLength);
+        return nil;
+    }
     if (jsonLength == 2)  // Original JSON was empty
         return extraJson;
     NSMutableData* newJson = [NSMutableData dataWithLength: jsonLength + extraLength - 1];
     uint8_t* dst = newJson.mutableBytes;
-    memcpy(dst, json.bytes, jsonLength - 1);                          // Copy json w/o trailing '}'
+    if (!dst) {
+        Warn(@"CBLJSON: couldn't allocate %zu bytes to append JSON dictionaries",
+             jsonLength + extraLength - 1);
+        return nil;
+    }
+    memcpy(dst, jsonBytes, jsonLength - 1);                           // Copy json w/o trailing '}'
     dst += jsonLength - 1;
     *dst++ = ',';                                                     // Add a ','
-    memcpy(dst, (const uint8_t*)extraJson.bytes + 1, extraLength - 1);  // Add "extra" after '{'
+    memcpy(dst, extraBytes + 1, extraLength - 1);                     // Add "extra" after '{'
     return newJson;
 }
 

@@ -46,8 +46,8 @@ typedef NSUInteger CBLJSONWritingOptions;
         toJSONDictionaryData: (NSData*)json;
 
 /** Same as above but inserts a pre-encoded JSON dictionary instead of an NSDictionary. */
-+ (NSData*) appendJSONDictionaryData: (NSData*)extraJson
-                toJSONDictionaryData: (NSData*)json;
++ (nullable NSData*) appendJSONDictionaryData: (NSData*)extraJson
+                         toJSONDictionaryData: (NSData*)json;
 
 /** Encodes an NSDate as a string in ISO-8601 format. */
 + (NSString*) JSONObjectWithDate: (NSDate*)date;
