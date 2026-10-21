@@ -143,6 +143,7 @@ static NSDateFormatter* getISO8601Formatter() {
         sFormatter = [[NSDateFormatter alloc] init];
         sFormatter.dateFormat = @"uuuu-MM-dd'T'HH:mm:ss.SSSXXX";
         sFormatter.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        sFormatter.gregorianStartDate = [NSDate distantPast];
         sFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     }
 

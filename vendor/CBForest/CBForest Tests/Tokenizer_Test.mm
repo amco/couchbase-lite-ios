@@ -32,7 +32,8 @@ using namespace cbforest;
 
 - (NSArray*) tokenize: (NSString*)string unique: (BOOL)unique {
     NSMutableArray* tokens = [NSMutableArray array];
-    for (TokenIterator i(*tokenizer, nsstring_slice(string), unique); i; ++i) {
+    nsstring_slice stringSlice(string);
+    for (TokenIterator i(*tokenizer, stringSlice, unique); i; ++i) {
         std::string tok = i.token();
         NSString* token = [[NSString alloc] initWithBytes: tok.c_str() length: tok.size() encoding: NSUTF8StringEncoding];
         XCTAssert(i.wordLength() > 0 && i.wordLength() < 20);

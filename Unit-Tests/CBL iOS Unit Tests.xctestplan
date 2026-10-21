@@ -1,0 +1,61 @@
+{
+  "configurations" : [
+    {
+      "id" : "5B8ED281-B2D3-4FE4-9EE1-6AAB19BFA414",
+      "name" : "Local",
+      "options" : {
+        "environmentVariableEntries" : [
+          {
+            "key" : "CBL_TEST_SERVER",
+            "value" : ""
+          },
+          {
+            "key" : "CBL_SSL_TEST_SERVER",
+            "value" : ""
+          }
+        ]
+      }
+    },
+    {
+      "id" : "52004B2A-80EB-4DB4-872F-374D8ABC406D",
+      "name" : "Sync Gateway",
+      "options" : {
+        "environmentVariableEntries" : [
+          {
+            "key" : "CBL_TEST_SERVER",
+            "value" : "http:\/\/localhost:4984\/"
+          },
+          {
+            "key" : "CBL_SSL_TEST_SERVER",
+            "value" : "https:\/\/localhost:4994\/"
+          }
+        ]
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "addressSanitizer" : {
+      "enabled" : true
+    },
+    "commandLineArgumentEntries" : [
+      {
+        "argument" : "-Log YES"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:CouchbaseLite.xcodeproj",
+      "identifier" : "27B0B80A1492C16300A817AD",
+      "name" : "CBL iOS Test App"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CouchbaseLite.xcodeproj",
+        "identifier" : "2700358A1A44E9270015B9F4",
+        "name" : "CBL iOS Unit Tests"
+      }
+    }
+  ],
+  "version" : 1
+}

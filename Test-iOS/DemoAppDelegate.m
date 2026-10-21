@@ -14,7 +14,6 @@
 //  and limitations under the License.
 
 #import "DemoAppDelegate.h"
-#import "RootViewController.h"
 #import "CouchbaseLite.h"
 
 #define PERFORMANCE_TEST 0 // Enable this to do benchmarking (see RunViewPerformanceTest below)
@@ -26,7 +25,7 @@ static void RunViewPerformanceTest(void);
 @implementation DemoAppDelegate
 
 
-@synthesize window, navigationController, database;
+@synthesize database;
 
 
 - (instancetype) init {
@@ -81,10 +80,6 @@ static void exitHook(void) {
     NSAssert(&kCBLReplicationChangeNotification != nil, @"Invalid value");
     NSAssert(CBLHTTPErrorDomain != nil, @"Invalid value");
 
-    // Add the navigation controller's view to the window and display.
-	[window addSubview:navigationController.view];
-	[window makeKeyAndVisible];
-        
     NSLog(@"Opening database...");
     // Open the database, creating it on the first run:
     NSError* error;
@@ -92,10 +87,6 @@ static void exitHook(void) {
                                                                       error: &error];
     if (!self.database)
         [self showAlert: @"Couldn't open database" error: error fatal: YES];
-    
-    // Tell the RootViewController:
-    RootViewController* root = (RootViewController*)navigationController.topViewController;
-    [root useDatabase: database];
 
     return YES;
 }
