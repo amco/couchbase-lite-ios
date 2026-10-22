@@ -91,8 +91,15 @@
     size_t len;
     yajl_gen_get_buf(gen, &buf, &len);
     NSData* extra = [[NSData alloc] initWithBytesNoCopy: (void*)buf length: len freeWhenDone: NO];
-    self = [self initWithJSON: [CBLJSON appendJSONDictionaryData: extra
-                                            toJSONDictionaryData: json]];
+    NSData* combined = [CBLJSON appendJSONDictionaryData: extra toJSONDictionaryData: json];
+    if (combined) {
+        self = [self initWithJSON: combined];
+    } else {
+        Warn(@"CBL_Body: couldn't add _id/_rev to JSON of doc '%@' rev '%@'", docID, revID);
+        self = [super init];
+        if (self)
+            _error = YES;
+    }
     yajl_gen_free(gen);
     return self;
 }

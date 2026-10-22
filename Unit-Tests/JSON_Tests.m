@@ -10,6 +10,8 @@
 #import "CBLJSON.h"
 #import "CBJSONEncoder.h"
 #import "CBLJSONReader.h"
+#import "CBL_Body.h"
+#import "CBL_RevID.h"
 
 
 @interface CBL_GenericObjectMatcher : CBLJSONMatcher
@@ -61,6 +63,53 @@
     AssertEq(era, 0); // BCE
     AssertEq(year, 4004);
     AssertEqual([CBLJSON JSONObjectWithDate: date], @"-4003-10-22T18:00:00.000Z");
+}
+
+
+static NSData* jsonData(NSString* str) {
+    return [str dataUsingEncoding: NSUTF8StringEncoding];
+}
+
+
+- (void) test_CBLJSON_AppendJSONDictionaryData {
+    NSData* extra = jsonData(@"{\"_id\":\"doc1\"}");
+    AssertEqual([CBLJSON appendJSONDictionaryData: extra
+                             toJSONDictionaryData: jsonData(@"{\"foo\":1}")],
+                jsonData(@"{\"foo\":1,\"_id\":\"doc1\"}"));
+    AssertEqual([CBLJSON appendJSONDictionaryData: extra toJSONDictionaryData: jsonData(@"{}")],
+                extra);
+
+    [self allowWarningsIn: ^{
+        NSData* nilData = nil;
+        NSData* dict = jsonData(@"{\"foo\":1}");
+        AssertNil([CBLJSON appendJSONDictionaryData: extra toJSONDictionaryData: nilData]);
+        AssertNil([CBLJSON appendJSONDictionaryData: nilData toJSONDictionaryData: dict]);
+        AssertNil([CBLJSON appendJSONDictionaryData: extra toJSONDictionaryData: [NSData data]]);
+        AssertNil([CBLJSON appendJSONDictionaryData: extra toJSONDictionaryData: jsonData(@"{")]);
+        AssertNil([CBLJSON appendJSONDictionaryData: extra
+                                 toJSONDictionaryData: jsonData(@"[1,2]")]);
+        AssertNil([CBLJSON appendJSONDictionaryData: jsonData(@"[1,2]")
+                                 toJSONDictionaryData: dict]);
+
+        AssertEqual([CBLJSON appendDictionary: @{@"_id": @"doc1"}
+                          toJSONDictionaryData: jsonData(@"[1,2]")],
+                    jsonData(@"[1,2]"));
+    }];
+}
+
+
+- (void) test_CBL_Body_AddingDocIDToUnusableJSON {
+    __block CBL_Body* body;
+    [self allowWarningsIn: ^{
+        body = [[CBL_Body alloc] initWithJSON: jsonData(@"[1,2]")
+                                  addingDocID: @"doc1"
+                                        revID: @"1-1111".cbl_asRevID
+                                      deleted: NO];
+    }];
+    Assert(body.error);
+    AssertNil(body.asJSON);
+    AssertNil(body.properties);
+    Assert(!body.isValidJSON);
 }
 
 
